@@ -1,0 +1,15 @@
+[package]
+name = "hello-zinc"
+version = "0.1.0"
+authors = ["James Cook <mokus@deepbondi.net>"]
+
+[dependencies.core]
+git = "https://github.com/hackndev/rust-libcore.git"
+
+[dependencies.zinc]
+git = "https://github.com/hackndev/zinc.git"
+features = ["mcu_stm32f4"]
+
+[dependencies.macro_zinc]
+git = "https://github.com/hackndev/zinc.git"
+path = "macro_zinc"
