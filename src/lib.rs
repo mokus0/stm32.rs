@@ -11,3 +11,4 @@ pub mod crc;
 pub mod firewall;
 pub mod flash;
 pub mod gpio;
+pub mod pwr;
