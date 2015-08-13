@@ -7,5 +7,6 @@
 extern crate ioreg;
 extern crate volatile_cell;
 
+pub mod firewall;
 pub mod flash;
 pub mod gpio;
