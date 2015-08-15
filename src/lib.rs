@@ -14,3 +14,8 @@ pub mod gpio;
 pub mod pwr;
 pub mod rcc;
 pub mod timer;
+
+mod init;
+pub use init::init_memory;
+
+pub mod vectors;
