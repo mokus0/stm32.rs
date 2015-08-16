@@ -3,8 +3,8 @@ name = "hello-zinc"
 version = "0.1.0"
 dependencies = [
  "core 1.0.0 (git+https://github.com/hackndev/rust-libcore.git)",
- "macro_zinc 0.1.0 (git+https://github.com/hackndev/zinc.git)",
- "zinc 0.1.0 (git+https://github.com/hackndev/zinc.git)",
+ "rlibc 0.1.3",
+ "stm32 0.1.0",
 ]
 
 [[package]]
@@ -15,22 +15,24 @@ source = "git+https://github.com/hackndev/rust-libcore.git#d9dc4f94163a78efb4da1
 [[package]]
 name = "ioreg"
 version = "0.1.0"
-source = "git+https://github.com/hackndev/zinc.git#b55adef3afefb5a6ff8bbfca3b4c0588740c599a"
 dependencies = [
  "syntaxext_lint 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
-name = "macro_zinc"
-version = "0.1.0"
-source = "git+https://github.com/hackndev/zinc.git#b55adef3afefb5a6ff8bbfca3b4c0588740c599a"
-
-[[package]]
 name = "rlibc"
 version = "0.1.3"
-source = "git+https://github.com/hackndev/rlibc?branch=zinc#0acbe22bbb9fd79052f41524811a7349e2663f52"
 dependencies = [
  "core 1.0.0 (git+https://github.com/hackndev/rust-libcore.git)",
+]
+
+[[package]]
+name = "stm32"
+version = "0.1.0"
+dependencies = [
+ "core 1.0.0 (git+https://github.com/hackndev/rust-libcore.git)",
+ "ioreg 0.1.0",
+ "volatile_cell 1.0.0",
 ]
 
 [[package]]
@@ -41,19 +43,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "volatile_cell"
 version = "1.0.0"
-source = "git+https://github.com/hackndev/zinc.git#b55adef3afefb5a6ff8bbfca3b4c0588740c599a"
 dependencies = [
  "core 1.0.0 (git+https://github.com/hackndev/rust-libcore.git)",
-]
-
-[[package]]
-name = "zinc"
-version = "0.1.0"
-source = "git+https://github.com/hackndev/zinc.git#b55adef3afefb5a6ff8bbfca3b4c0588740c599a"
-dependencies = [
- "core 1.0.0 (git+https://github.com/hackndev/rust-libcore.git)",
- "ioreg 0.1.0 (git+https://github.com/hackndev/zinc.git)",
- "rlibc 0.1.3 (git+https://github.com/hackndev/rlibc?branch=zinc)",
- "volatile_cell 1.0.0 (git+https://github.com/hackndev/zinc.git)",
 ]
 
