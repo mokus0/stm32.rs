@@ -8,7 +8,11 @@ build = "cp_linker_scripts.rs"
 git = "https://github.com/hackndev/rust-libcore.git"
 
 [dependencies.ioreg]
-path = "../../hackndev/zinc/ioreg"
+git = "https://github.com/mokus0/zinc"
+branch = "develop"
+path = "ioreg"
 
 [dependencies.volatile_cell]
-path = "../../hackndev/zinc/volatile_cell"
+git = "https://github.com/mokus0/zinc"
+branch = "develop"
+path = "volatile_cell"
