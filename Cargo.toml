@@ -1,5 +1,5 @@
 [package]
-name = "hello-zinc"
+name = "stm32l4-discovery"
 version = "0.1.0"
 authors = ["James Cook <mokus@deepbondi.net>"]
 
@@ -7,7 +7,8 @@ authors = ["James Cook <mokus@deepbondi.net>"]
 git = "https://github.com/hackndev/rust-libcore.git"
 
 [dependencies.rlibc]
-path = "../../hackndev/rlibc"
+git = "https://github.com/hackndev/rlibc"
+branch = "zinc"
 
 [dependencies.stm32]
-path = "../stm32.rs"
+git = "https://github.com/mokus0/stm32.rs"
