@@ -58,4 +58,8 @@ SECTIONS
     } > FLASH
     
     PROVIDE(__stack = __sram_end);
+    
+    .debug : {
+        *(.debug_gdb_scripts)
+    } > FLASH
 }

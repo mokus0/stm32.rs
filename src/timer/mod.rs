@@ -42,6 +42,7 @@ ioregs!(GPTIM32 = {
             2 => Div4,
         },
         11 => uif_remap : rw {
+            // TODO: STM32L4x6 only
             0 => Disable,
             1 => Enable,
         },
@@ -71,14 +72,15 @@ ioregs!(GPTIM32 = {
     0x08 => reg32 smcr {
         0..2 => sms02 : rw,
         3 => occs : rw {
+            // TODO: STM32L4x6 only
             0 => OCRef_Clr,
             1 => ETRF,
         },
         4..6 => ts : rw {
-            0 => ITR0_Reserved,
+            0 => ITR0, // TODO: reserved on STM32L4x6
             1 => ITR1,
             2 => ITR2,
-            3 => ITR3_Reserved,
+            3 => ITR3, // TODO: reserved on STM32L4x6
             4 => TI1F_ED,
             5 => TI1FP1,
             6 => TI1FP2,
@@ -103,7 +105,7 @@ ioregs!(GPTIM32 = {
             0 => NonInverted,
             1 => Inverted,
         },
-        16 => sms3 : rw,
+        16 => sms3 : rw, // TODO: STM32L4x6 only
     },
     
     0x0c => reg32 dier {
@@ -146,6 +148,7 @@ ioregs!(GPTIM32 = {
     0x18 => reg32 ccmr1 {
         // TODO: ioreg support for custom register types...
         //       this one would map nicely to a pair of 2-variant enums
+        // TODO: remember to compare all supported MCUs when revisiting this
         0..31 => ccmr1 : rw,
     },
     
@@ -170,7 +173,7 @@ ioregs!(GPTIM32 = {
     },
     
     0x24 => reg32 cnt {
-        // TODO: note about bit 31
+        // TODO: note about bit 31 on STM32L4x6 (it has an alternate function)
         // TODO: ioregs support for regs that are just plain values (possibly of parameter types)
         0..31 => cnt : rw,
     },
@@ -194,52 +197,6 @@ ioregs!(GPTIM32 = {
     
     0x4c => reg32 dmar {
         0..15 => dmab : rw,
-    },
-});
-
-// Option registers for TIM2 and TIM3; both start at 0x50 relative to 
-// base of their respective timer peripherals
-//  (STM32L4x6)
-ioregs!(TIM2_OPT = {
-    0x00 => reg32 or1 {
-        0 => itr1_rmp : rw {
-            0 => TIM8_TRGO,
-            1 => OTG_FS_SOF,
-        },
-        1 => etr1_rmp : rw {
-            0 => IO,
-            1 => LSE,
-        },
-        2..3 => ti4_rmp : rw {
-            0 => IO,
-            1 => COMP1_OUT,
-            2 => COMP2_OUT,
-            3 => Or,
-        },
-    },
-    0x10 => reg32 or2 {
-        14..16 => etr_sel {
-            0 => LegacyMode,
-            1 => COMP1,
-            2 => COMP2,
-        },
-    },
-});
-
-ioregs!(TIM3_OPT = {
-    0x00 => reg32 or1 {
-        0..1 => ti1_rmp : rw {
-            0 => IO,
-            1 => COMP1_OUT,
-            2 => COMP2_OUT,
-            3 => Or,
-        },
-    },
-    0x10 => reg32 or2 {
-        14..16 => etr_sel {
-            0 => LegacyMode,
-            1 => COMP1,
-        },
     },
 });
 

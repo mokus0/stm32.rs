@@ -7,6 +7,7 @@
 extern crate ioreg;
 extern crate volatile_cell;
 
+pub mod stm32f4;
 pub mod stm32l476;
 
 pub mod crc;
@@ -14,7 +15,6 @@ pub mod firewall;
 pub mod flash;
 pub mod gpio;
 pub mod pwr;
-pub mod rcc;
 pub mod timer;
 
 mod init;
