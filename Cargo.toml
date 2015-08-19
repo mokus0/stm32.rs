@@ -1,5 +1,5 @@
 [package]
-name = "stm32l4-discovery"
+name = "stm32f429-discovery"
 version = "0.1.0"
 authors = ["James Cook <mokus@deepbondi.net>"]
 

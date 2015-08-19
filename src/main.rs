@@ -4,26 +4,26 @@
 extern crate stm32;
 extern crate rlibc;
 
-use stm32::stm32l476::*;
+use stm32::stm32f4::*;
 
 #[start]
 pub fn main(_: isize, _: *const *const u8) -> isize {
     stm32::init_memory();
     
-    // enable LED GPIOs (PB2 = red, PE8 = green)
-    RCC.ahb2enr.set_gpiob_en(true).set_gpioe_en(true);
+    // enable LED GPIOs (PG13 = green, PG14 = red)
+    RCC.ahb1enr.set_gpiog_en(true);
     
     // set LED pins to "output"
-    GPIOB.moder.set_mode(2, stm32::gpio::GPIO_moder_mode::Output);
-    GPIOE.moder.set_mode(8, stm32::gpio::GPIO_moder_mode::Output);
+    GPIOG.moder.set_mode(13, stm32::gpio::GPIO_moder_mode::Output)
+               .set_mode(14, stm32::gpio::GPIO_moder_mode::Output);
     
     // enable TIM2
-    RCC.apb1enr1.set_tim2_en(true);
+    RCC.apb1enr.set_tim2_en(true);
     
-    // configure TIM2.  System clock at boot is 4 MHz and we haven't
-    // changed it, so setting prescaler to 3999 will yield a 1 ms tick.
+    // configure TIM2.  System clock at boot is 16 MHz and we haven't
+    // changed it, so setting prescaler to 15999 will yield a 1 ms tick.
     // CEN bit switches the timer on.
-    TIM2.psc.set_psc(3999);
+    TIM2.psc.set_psc(15999);
     TIM2.cr1.set_cen(stm32::timer::GPTIM32_cr1_cen::Enable);
     
     // apply configuration changes to TIM2
@@ -31,13 +31,13 @@ pub fn main(_: isize, _: *const *const u8) -> isize {
     
     loop {
         // Red on, Green off
-        GPIOB.bsrr.set_bs(2, true);
-        GPIOE.bsrr.set_br(8, true);
+        GPIOG.bsrr.set_br(13, true)
+                  .set_bs(14, true);
         wait_ms(300);
         
         // Green on, Red off
-        GPIOB.bsrr.set_br(2, true);
-        GPIOE.bsrr.set_bs(8, true);
+        GPIOG.bsrr.set_bs(13, true)
+                  .set_br(14, true);
         wait_ms(300);
     }
 }

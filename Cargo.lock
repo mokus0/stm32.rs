@@ -1,5 +1,5 @@
 [root]
-name = "stm32l4-discovery"
+name = "stm32f429-discovery"
 version = "0.1.0"
 dependencies = [
  "core 1.0.0 (git+https://github.com/hackndev/rust-libcore.git)",
@@ -31,7 +31,7 @@ dependencies = [
 [[package]]
 name = "stm32"
 version = "0.1.0"
-source = "git+https://github.com/mokus0/stm32.rs#1260e6d9231efcec931f2d4a28aae58e9e3157b7"
+source = "git+https://github.com/mokus0/stm32.rs#5e4a0535cb42153260aa6a017cbb966105404fda"
 dependencies = [
  "core 1.0.0 (git+https://github.com/hackndev/rust-libcore.git)",
  "ioreg 0.1.0 (git+https://github.com/mokus0/zinc?branch=develop)",
