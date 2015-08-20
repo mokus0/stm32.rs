@@ -11,4 +11,4 @@ git = "https://github.com/hackndev/rlibc"
 branch = "zinc"
 
 [dependencies.stm32]
-git = "https://github.com/mokus0/stm32.rs"
+path = "../.."
