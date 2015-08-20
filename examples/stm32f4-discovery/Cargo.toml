@@ -1,0 +1,14 @@
+[package]
+name = "stm32f4-discovery"
+version = "0.1.0"
+authors = ["James Cook <mokus@deepbondi.net>"]
+
+[dependencies.core]
+git = "https://github.com/hackndev/rust-libcore.git"
+
+[dependencies.rlibc]
+git = "https://github.com/hackndev/rlibc"
+branch = "zinc"
+
+[dependencies.stm32]
+path = "../.."
