@@ -1,0 +1,53 @@
+[root]
+name = "stm32f429-discovery"
+version = "0.1.0"
+dependencies = [
+ "core 1.0.0 (git+https://github.com/hackndev/rust-libcore.git)",
+ "rlibc 0.1.3 (git+https://github.com/hackndev/rlibc?branch=zinc)",
+ "stm32 0.1.0 (git+https://github.com/mokus0/stm32.rs)",
+]
+
+[[package]]
+name = "core"
+version = "1.0.0"
+source = "git+https://github.com/hackndev/rust-libcore.git#d9dc4f94163a78efb4da176db6bd4ba82b2ac93e"
+
+[[package]]
+name = "ioreg"
+version = "0.1.0"
+source = "git+https://github.com/mokus0/zinc?branch=develop#b4d36f4830efc969401094c8acbd3df59baf5628"
+dependencies = [
+ "syntaxext_lint 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "rlibc"
+version = "0.1.3"
+source = "git+https://github.com/hackndev/rlibc?branch=zinc#1814ee088e864d6a043662ef378a7bcbfb01c36d"
+dependencies = [
+ "core 1.0.0 (git+https://github.com/hackndev/rust-libcore.git)",
+]
+
+[[package]]
+name = "stm32"
+version = "0.1.0"
+source = "git+https://github.com/mokus0/stm32.rs#5e4a0535cb42153260aa6a017cbb966105404fda"
+dependencies = [
+ "core 1.0.0 (git+https://github.com/hackndev/rust-libcore.git)",
+ "ioreg 0.1.0 (git+https://github.com/mokus0/zinc?branch=develop)",
+ "volatile_cell 1.0.0 (git+https://github.com/mokus0/zinc?branch=develop)",
+]
+
+[[package]]
+name = "syntaxext_lint"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "volatile_cell"
+version = "1.0.0"
+source = "git+https://github.com/mokus0/zinc?branch=develop#b4d36f4830efc969401094c8acbd3df59baf5628"
+dependencies = [
+ "core 1.0.0 (git+https://github.com/hackndev/rust-libcore.git)",
+]
+
