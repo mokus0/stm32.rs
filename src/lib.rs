@@ -7,6 +7,7 @@
 extern crate ioreg;
 extern crate volatile_cell;
 
+pub mod stm32f0x2;
 pub mod stm32f4;
 pub mod stm32l476;
 

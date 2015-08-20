@@ -3,6 +3,8 @@
 use volatile_cell::VolatileCell;
 
 // Known to apply to:
+//  STM32F0x1, STM32F0x2, STM32F0x8 (TIM2/3)
+//  STM32F4 (TIM2/3/4/5)
 //  STM32L4x6 (TIM2/3/4/5)
 ioregs!(GPTIM32 = {
     0x00 => reg32 cr1 {
@@ -175,6 +177,7 @@ ioregs!(GPTIM32 = {
     0x24 => reg32 cnt {
         // TODO: note about bit 31 on STM32L4x6 (it has an alternate function)
         // TODO: ioregs support for regs that are just plain values (possibly of parameter types)
+        // TODO: note: STM32F0x1 et al only have 16 bits in TIM3
         0..31 => cnt : rw,
     },
     
@@ -184,10 +187,12 @@ ioregs!(GPTIM32 = {
     
     0x2c => reg32 arr {
         0..31 => arr : rw,
+        // TODO: note: STM32F0x1 et al only have 16 bits in TIM3
     },
     
     0x34 => reg32 ccr[4] {
         0..31 => ccr : rw,
+        // TODO: note: STM32F0x1 et al only have 16 bits in TIM3
     },
     
     0x48 => reg32 dcr {
