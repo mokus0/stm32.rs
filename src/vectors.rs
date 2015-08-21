@@ -1,7 +1,6 @@
 #![no_std]
 
 use core::option::Option;
-use core::option::Option::{Some, None};
 
 /// per the ARMv7-M Architecture Reference Manual
 /// Section B1.5.2 (Table B1-4)
@@ -39,20 +38,20 @@ pub struct ExceptionVectors {
 pub static EXCEPTION_VECTORS : ExceptionVectors = ExceptionVectors {
     initial_stack_ptr:      __stack,
     reset:                  main,
-    non_maskable_interrupt: None,
-    hard_fault:             None,
-    mem_manage:             None,
-    bus_fault:              None,
-    usage_fault:            None,
+    non_maskable_interrupt: Option::None,
+    hard_fault:             Option::None,
+    mem_manage:             Option::None,
+    bus_fault:              Option::None,
+    usage_fault:            Option::None,
     reserved7:              0,
     reserved8:              0,
     reserved9:              0,
     reserved10:             0,
-    sv_call:                None,
-    debug_monitor:          None,
+    sv_call:                Option::None,
+    debug_monitor:          Option::None,
     reserved13:             0,
-    pend_sv:                None,
-    sys_tick:               None,
+    pend_sv:                Option::None,
+    sys_tick:               Option::None,
 };
 
 extern {
