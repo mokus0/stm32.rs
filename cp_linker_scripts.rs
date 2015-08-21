@@ -10,7 +10,7 @@ fn main() {
     
     for entry in fs::read_dir(&in_path).unwrap() {
         let ld_script = entry.unwrap();
-        fs::copy(ld_script.path(), out_path.join(ld_script.file_name()));
+        fs::copy(ld_script.path(), out_path.join(ld_script.file_name())).unwrap();
     }
     
     println!("cargo:rustc-link-search=native={}", out_dir);
