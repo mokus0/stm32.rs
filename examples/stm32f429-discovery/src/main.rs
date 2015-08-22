@@ -8,8 +8,6 @@ use stm32::stm32f4::*;
 
 #[start]
 pub fn main(_: isize, _: *const *const u8) -> isize {
-    stm32::init_memory();
-    
     // enable LED GPIOs (PG13 = green, PG14 = red)
     RCC.ahb1enr.set_gpiog_en(true);
     
@@ -48,20 +46,4 @@ fn wait_ms(ms : u32) {
     {
         // just spin
     }
-}
-
-#[lang="panic_fmt"]
-pub fn panic_fmt(_: &core::fmt::Arguments, _: &(&'static str, usize)) -> ! {
-    loop {}
-}
-
-#[lang="stack_exhausted"]
-extern fn stack_exhausted() {}
-
-#[lang="eh_personality"]
-extern fn eh_personality() {}
-
-#[no_mangle]
-pub extern fn abort() -> ! {
-  loop {}
 }

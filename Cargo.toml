@@ -7,6 +7,9 @@ build = "cp_linker_scripts.rs"
 [dependencies.core]
 git = "https://github.com/hackndev/rust-libcore.git"
 
+[dependencies.arm_embedded_rt]
+git = "https://github.com/mokus0/arm_embedded_rt.git"
+
 [dependencies.ioreg]
 git = "https://github.com/mokus0/zinc"
 branch = "develop"

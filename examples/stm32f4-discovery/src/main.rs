@@ -1,4 +1,4 @@
-#![feature(plugin, no_std, start, lang_items)]
+#![feature(no_std, start)]
 #![no_std]
 
 extern crate stm32;
@@ -8,8 +8,6 @@ use stm32::stm32f4::*;
 
 #[start]
 pub fn main(_: isize, _: *const *const u8) -> isize {
-    stm32::init_memory();
-    
     // enable LED GPIOs 
     // (PD12 = green, PD13 = orange, PD14 = red, PD15 = blue)
     RCC.ahb1enr.set_gpiod_en(true);
@@ -49,20 +47,4 @@ fn wait_ms(ms : u32) {
     {
         // just spin
     }
-}
-
-#[lang="panic_fmt"]
-pub fn panic_fmt(_: &core::fmt::Arguments, _: &(&'static str, usize)) -> ! {
-    loop {}
-}
-
-#[lang="stack_exhausted"]
-extern fn stack_exhausted() {}
-
-#[lang="eh_personality"]
-extern fn eh_personality() {}
-
-#[no_mangle]
-pub extern fn abort() -> ! {
-  loop {}
 }

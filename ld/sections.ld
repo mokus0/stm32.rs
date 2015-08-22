@@ -7,20 +7,8 @@ __sram_end      = ORIGIN(SRAM) + LENGTH(SRAM);
 __data_start_flash = LOADADDR(.data);
 __data_end_flash = LOADADDR(.data) + (__data_end_sram - __data_start_sram);
 
-ENTRY(EXCEPTION_VECTORS)
-
 SECTIONS
 {
-    .vect.exc VECTOR_BASE : {
-        FILL(0xFF)
-        KEEP(*(.exception_vectors))
-    } > FLASH
-    
-    .vect.nvic NVIC_BASE : {
-        FILL(0xFF)
-        KEEP(*(.nvic))
-    } > FLASH
-    
     /*  */
     .text NVIC_END : {
         FILL(0xFF)
@@ -51,6 +39,12 @@ SECTIONS
         __bss_end = .;
     } > SRAM
     
+    .ARM.extab : {
+        __extab_start = .;
+        *(.ARM.extab* .gnu.linkonce.armextab.*)
+        __extab_end = .;
+    } > FLASH
+    
     .ARM.exidx : {
         __exidx_start = .;
         *(.ARM.exidx* .gnu.linkonce.armexidx.*)
@@ -63,3 +57,4 @@ SECTIONS
         *(.debug_gdb_scripts)
     } > FLASH
 }
+INSERT AFTER .vect.nvic

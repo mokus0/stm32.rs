@@ -23,7 +23,9 @@ __sram2_start   = ORIGIN(SRAM2);
 __sram2_end     = ORIGIN(SRAM2) + LENGTH(SRAM2);
 
 REGION_ALIAS("SRAM", SRAM1);
+
 INCLUDE sections.ld;
+INCLUDE thumbv7em_rt.ld;
 
 SECTIONS
 {

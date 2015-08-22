@@ -37,7 +37,9 @@ __ccm_start     = ORIGIN(CCM);
 __ccm_end       = ORIGIN(CCM) + LENGTH(CCM);
 
 REGION_ALIAS("SRAM", SRAM1);
+
 INCLUDE sections.ld;
+INCLUDE thumbv7em_rt.ld;
 
 TIM2        = 0x40000000;
 TIM2_OR     = 0x40000050;

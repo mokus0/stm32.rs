@@ -13,6 +13,7 @@ MEMORY {
 }
 
 INCLUDE sections.ld;
+INCLUDE thumbv6m_rt.ld;
 
 TIM2        = 0x40000000;
 TIM3        = 0x40000400;

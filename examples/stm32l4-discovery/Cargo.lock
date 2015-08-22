@@ -8,6 +8,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "arm_embedded_rt"
+version = "0.1.0"
+source = "git+https://github.com/mokus0/arm_embedded_rt.git#7cb6b2bbde2bc38d7361c587409a91854330124d"
+dependencies = [
+ "core 1.0.0 (git+https://github.com/hackndev/rust-libcore.git)",
+]
+
+[[package]]
 name = "core"
 version = "1.0.0"
 source = "git+https://github.com/hackndev/rust-libcore.git#d9dc4f94163a78efb4da176db6bd4ba82b2ac93e"
@@ -32,6 +40,7 @@ dependencies = [
 name = "stm32"
 version = "0.1.0"
 dependencies = [
+ "arm_embedded_rt 0.1.0 (git+https://github.com/mokus0/arm_embedded_rt.git)",
  "core 1.0.0 (git+https://github.com/hackndev/rust-libcore.git)",
  "ioreg 0.1.0 (git+https://github.com/mokus0/zinc?branch=develop)",
  "volatile_cell 1.0.0 (git+https://github.com/mokus0/zinc?branch=develop)",
