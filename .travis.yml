@@ -1,11 +1,13 @@
 language:   rust
 rust:       nightly
-sudo:       false
+sudo:       true
 addons:
   apt:
     sources:
       - debian-sid
     packages:
       - gcc-arm-none-eabi
-      - libnewlib-arm-none-eabi
-script:     .travis/build.sh
+before-install:
+    - sudo apt-get install libnewlib-arm-none-eabi
+script:
+    - .travis/build.sh
