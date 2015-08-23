@@ -1,13 +1,14 @@
-#![feature(plugin, no_std, start, lang_items)]
+#![feature(no_std, plugin)]
 #![no_std]
+#![plugin(arm_rt_macro)]
 
 extern crate stm32;
 extern crate rlibc;
 
 use stm32::stm32l476::*;
 
-#[start]
-pub fn main(_: isize, _: *const *const u8) -> isize {
+#[entry_point]
+fn main() -> ! {
     // enable LED GPIOs (PB2 = red, PE8 = green)
     RCC.ahb2enr.set_gpiob_en(true).set_gpioe_en(true);
     

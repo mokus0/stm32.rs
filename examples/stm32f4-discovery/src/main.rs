@@ -1,13 +1,14 @@
-#![feature(no_std, start)]
+#![feature(no_std, plugin)]
 #![no_std]
+#![plugin(arm_rt_macro)]
 
 extern crate stm32;
 extern crate rlibc;
 
 use stm32::stm32f4::*;
 
-#[start]
-pub fn main(_: isize, _: *const *const u8) -> isize {
+#[entry_point]
+fn main() -> ! {
     // enable LED GPIOs 
     // (PD12 = green, PD13 = orange, PD14 = red, PD15 = blue)
     RCC.ahb1enr.set_gpiod_en(true);
