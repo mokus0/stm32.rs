@@ -7,4 +7,5 @@ addons:
       - debian-sid
     packages:
       - gcc-arm-none-eabi
+      - libnewlib-arm-none-eabi
 script:     .travis/build.sh
