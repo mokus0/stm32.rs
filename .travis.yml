@@ -1,13 +1,18 @@
 language:   rust
 rust:       nightly
-sudo:       true
+# sudo:       false
 addons:
   apt:
     sources:
       - debian-sid
     packages:
       - gcc-arm-none-eabi
+
+# workaround for:
+# https://github.com/travis-ci/apt-package-whitelist/issues/435
+sudo:       true
 before_script:
     - sudo apt-get install libnewlib-arm-none-eabi
+
 script:
     - .travis/build.sh

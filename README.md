@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/mokus0/stm32.rs.svg)](https://travis-ci.org/mokus0/stm32.rs)
+
+
 Low-level hardware descriptions of STM32 microcontroller register layouts.  Rather than using the SVD, which doesn't do much of anything to indicate commonalities between models or even peripherals within a single model, I'm just going through the reference manuals and defining types for each peripheral so they can be shared by compatible models (and thus, simplifying the construction of HALs on top of them)
 
 Presently, I am targeting the following devices because they are the ones I have on hand (relevant ST document references in parens):
