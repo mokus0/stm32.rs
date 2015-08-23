@@ -18,3 +18,4 @@ pub mod flash;
 pub mod gpio;
 pub mod pwr;
 pub mod timer;
+pub mod usart;

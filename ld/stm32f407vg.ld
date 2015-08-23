@@ -33,24 +33,4 @@ REGION_ALIAS("SRAM", SRAM1);
 
 INCLUDE sections.ld;
 INCLUDE thumbv7em_rt.ld;
-
-TIM2        = 0x40000000;
-TIM2_OR     = 0x40000050;
-TIM3        = 0x40000400;
-TIM4        = 0x40000800;
-TIM5        = 0x40000c00;
-TIM5_OR     = 0x40000c50;
-
-RCC         = 0x40023800;
-
-GPIOA       = 0x40020000;
-GPIOB       = 0x40020400;
-GPIOC       = 0x40020800;
-GPIOD       = 0x40020c00;
-GPIOE       = 0x40021000;
-GPIOF       = 0x40021400;
-GPIOG       = 0x40021800;
-GPIOH       = 0x40021c00;
-GPIOI       = 0x40022000;
-GPIOJ       = 0x40022400;
-GPIOK       = 0x40022800;
+INCLUDE stm32f4_peripherals.ld;
