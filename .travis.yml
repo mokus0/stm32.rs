@@ -1,0 +1,10 @@
+language:   rust
+rust:       nightly
+sudo:       false
+addons:
+  apt:
+    sources:
+      - debian-sid
+    packages:
+      - gcc-arm-none-eabi
+script:     .travis/build.sh
