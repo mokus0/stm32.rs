@@ -5,7 +5,7 @@
 extern crate stm32;
 extern crate rlibc;
 
-use stm32::stm32l476::*;
+use stm32::stm32l4::*;
 
 #[entry_point]
 fn main() -> ! {
