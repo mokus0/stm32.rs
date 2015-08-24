@@ -14,15 +14,4 @@ MEMORY {
 
 INCLUDE sections.ld;
 INCLUDE thumbv6m_rt.ld;
-
-TIM2        = 0x40000000;
-TIM3        = 0x40000400;
-
-RCC         = 0x40021000;
-
-GPIOA       = 0x48000000;
-GPIOB       = 0x48000400;
-GPIOC       = 0x48000800;
-GPIOD       = 0x48000c00;
-GPIOE       = 0x48001000;
-GPIOF       = 0x48001400;
+INCLUDE stm32f0x1_peripherals.ld

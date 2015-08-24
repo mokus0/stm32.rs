@@ -8,9 +8,9 @@ extern crate ioreg;
 extern crate volatile_cell;
 extern crate arm_embedded_rt;
 
-pub mod stm32f0;
+pub mod stm32f0x1;
 pub mod stm32f4;
-pub mod stm32l4;
+pub mod stm32l4x6;
 
 pub mod crc;
 pub mod firewall;
