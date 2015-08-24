@@ -14,8 +14,6 @@ pub mod stm32l476;
 
 pub mod crc;
 pub mod firewall;
-pub mod flash;
 pub mod gpio;
-pub mod pwr;
 pub mod timer;
 pub mod usart;

@@ -6,13 +6,7 @@ use volatile_cell::VolatileCell;
 //  STM32L4x6
 ioregs!(FLASH = {
     0x00 => reg32 acr {
-        0..2 => latency : rw {
-            0 => Zero,
-            1 => One,
-            2 => Two,
-            3 => Three,
-            4 => Four,
-        },
+        0..2 => latency : rw,
         8 => prften : rw {
             0 => Enabled,
             1 => Disabled,

@@ -1,12 +1,12 @@
 #![no_std]
 
+pub mod flash;
+pub mod pwr;
 pub mod rcc;
 pub mod timer_opt;
 
 use firewall;
-use flash;
 use gpio;
-use pwr;
 use timer;
 
 extern {
