@@ -1,9 +1,10 @@
-/// 
-/// Register interfaces for STM32F405/415, STM32F407/417,
-/// STM32F427/437 and STM32F429/439
-/// 
-/// See ST reference manual RM0090
-/// 
+// 
+// Register interfaces for STM32F405/415, STM32F407/417,
+// STM32F427/437 and STM32F429/439
+// 
+// See ST reference manual RM0090
+// 
+
 #![no_std]
 
 pub mod rcc;

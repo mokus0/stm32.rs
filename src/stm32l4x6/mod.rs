@@ -1,8 +1,8 @@
-/// 
-/// Register interfaces for STM32L4x6
-/// 
-/// See ST reference manual RM0351
-/// 
+// 
+// Register interfaces for STM32L4x6
+// 
+// See ST reference manual RM0351
+// 
 
 #![no_std]
 
