@@ -14,4 +14,5 @@ pub mod stm32l4x6;
 
 pub mod crc;
 pub mod gpio;
+pub mod rtc;
 pub mod timer;
