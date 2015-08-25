@@ -11,10 +11,14 @@ pub mod rcc;
 pub mod timer_opt;
 pub mod usart;
 
+use crc;
 use gpio;
+use rng;
+use rtc;
 use timer;
 
 extern {
+    #[link_name="stm32f4_CRC"]      pub static CRC:     crc::CRC;
     #[link_name="stm32f4_GPIOA"]    pub static GPIOA:   gpio::GPIO;
     #[link_name="stm32f4_GPIOB"]    pub static GPIOB:   gpio::GPIO;
     #[link_name="stm32f4_GPIOC"]    pub static GPIOC:   gpio::GPIO;
@@ -26,16 +30,15 @@ extern {
     #[link_name="stm32f4_GPIOI"]    pub static GPIOI:   gpio::GPIO;
     #[link_name="stm32f4_GPIOJ"]    pub static GPIOJ:   gpio::GPIO;
     #[link_name="stm32f4_GPIOK"]    pub static GPIOK:   gpio::GPIO;
-    
     #[link_name="stm32f4_RCC"]      pub static RCC:     rcc::RCC;
-    
+    #[link_name="stm32f4_RNG"]      pub static RNG:     rng::RNG;
+    #[link_name="stm32f4_RTC"]      pub static RTC:     rtc::RTC;
     #[link_name="stm32f4_TIM2"]     pub static TIM2:    timer::GPTIM32;
     #[link_name="stm32f4_TIM2_OR"]  pub static TIM2_OR: timer_opt::TIM2_OPT;
     #[link_name="stm32f4_TIM3"]     pub static TIM3:    timer::GPTIM32;
     #[link_name="stm32f4_TIM4"]     pub static TIM4:    timer::GPTIM32;
     #[link_name="stm32f4_TIM5"]     pub static TIM5:    timer::GPTIM32;
     #[link_name="stm32f4_TIM5_OR"]  pub static TIM5_OR: timer_opt::TIM5_OPT;
-    
     #[link_name="stm32f4_USART1"]   pub static USART1:  usart::USART;
     #[link_name="stm32f4_USART2"]   pub static USART2:  usart::USART;
     #[link_name="stm32f4_USART3"]   pub static USART3:  usart::USART;
