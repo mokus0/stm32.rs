@@ -9,10 +9,10 @@
 
 pub mod rcc;
 pub mod timer_opt;
+pub mod usart;
 
 use gpio;
 use timer;
-use usart;
 
 extern {
     #[link_name="stm32f4_GPIOA"]    pub static GPIOA:   gpio::GPIO;

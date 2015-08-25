@@ -16,4 +16,3 @@ pub mod crc;
 pub mod firewall;
 pub mod gpio;
 pub mod timer;
-pub mod usart;
