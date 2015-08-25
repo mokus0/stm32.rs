@@ -8,19 +8,21 @@
 
 pub mod rcc;
 
+use crc;
 use gpio;
+use rtc;
 use timer;
 
 extern {
+    #[link_name="stm32f0x1_CRC"]    pub static CRC:     crc::CRC;
     #[link_name="stm32f0x1_GPIOA"]  pub static GPIOA:   gpio::GPIO;
     #[link_name="stm32f0x1_GPIOB"]  pub static GPIOB:   gpio::GPIO;
     #[link_name="stm32f0x1_GPIOC"]  pub static GPIOC:   gpio::GPIO;
     #[link_name="stm32f0x1_GPIOD"]  pub static GPIOD:   gpio::GPIO;
     #[link_name="stm32f0x1_GPIOE"]  pub static GPIOE:   gpio::GPIO;
     #[link_name="stm32f0x1_GPIOF"]  pub static GPIOF:   gpio::GPIO;
-    
     #[link_name="stm32f0x1_RCC"]    pub static RCC:     rcc::RCC;
-    
+    #[link_name="stm32f0x1_RTC"]    pub static RTC:     rtc::RTC;
     #[link_name="stm32f0x1_TIM2"]   pub static TIM2:    timer::GPTIM32;
     #[link_name="stm32f0x1_TIM3"]   pub static TIM3:    timer::GPTIM32;
 }
