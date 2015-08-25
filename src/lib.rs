@@ -13,6 +13,5 @@ pub mod stm32f4;
 pub mod stm32l4x6;
 
 pub mod crc;
-pub mod firewall;
 pub mod gpio;
 pub mod timer;

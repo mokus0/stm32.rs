@@ -6,12 +6,12 @@
 
 #![no_std]
 
+pub mod firewall;
 pub mod flash;
 pub mod pwr;
 pub mod rcc;
 pub mod timer_opt;
 
-use firewall;
 use gpio;
 use timer;
 
