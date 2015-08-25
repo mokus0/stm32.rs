@@ -3,9 +3,9 @@
 use volatile_cell::VolatileCell;
 
 // Known to apply to:
-//  STM32F0x1, STM32F0x2, STM32F0x8 (TIM2/3)
-//  STM32F4 (TIM2/3/4/5)
-//  STM32L4x6 (TIM2/3/4/5)
+//  [RM0091] STM32F0x1, STM32F0x2, STM32F0x8 (TIM2/3)
+//  [RM0090] STM32F4 (TIM2/3)
+//  [RM0351] STM32L4x6 (TIM2/3/4/5)
 ioregs!(GPTIM32 = {
     0x00 => reg32 cr1 {
         0 => cen : rw {
